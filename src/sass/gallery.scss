@@ -1,0 +1,158 @@
+body {
+    &.active {
+        overflow-y: hidden;
+    }
+}
+
+.main {
+    &__box {
+        padding: 10em 0;
+    }
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    list-style-type: none;
+
+    &__image {
+        width: 90%;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &:focus, &:focus-visible {
+            border: 5px solid white;        
+        }
+    }
+}
+
+@media(min-width: 678px) {
+    .gallery {
+        &__image {
+            width: 60%;
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .gallery {
+        &__image {
+            width: 40%;
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .gallery {
+        &__image {
+            width: 30%;
+        }
+    }
+}
+
+.popup {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    animation: popupOpenAnimate .3s;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    backdrop-filter: blur(10px);
+
+    &.hidden {
+        animation: popupCloseAnimate .3s both;
+    }
+
+    &.active {
+        display: flex;
+    }
+
+    &__image {
+        position: relative;
+        width: 95%;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__arrow-btn {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 6rem;
+        height: 6rem;
+        top: 50%;
+        border-radius: 50%;
+        border: none;
+        color: white;
+        background-color: rgba($color: #000000, $alpha: 0.8);
+        transform: translateY(-50%);
+        font-size: 3rem;
+        cursor: pointer;
+
+        &--left {
+            left: 0.5%;
+        }
+
+        &--right {
+            right: 0.5%;
+        }
+    }
+}
+
+@keyframes popupOpenAnimate {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popupCloseAnimate {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@media(min-width: 678px) {
+    .popup {
+        &__image {
+            width: 70%;
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .popup {
+        &__image {
+            width: 60%;
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .popup {
+        &__image {
+            max-width: 85rem;
+        }
+    }
+}

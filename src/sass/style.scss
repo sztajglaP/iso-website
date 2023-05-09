@@ -482,7 +482,7 @@ body {
     align-items: center;
     overflow: hidden;
     height: 100vh;
-    // background-image: url('../img/header-img-mobile.jpg');
+    background-image: url('../img/header-mobile.jpg');
     background-position: center;
     background-size: cover;
 
@@ -490,7 +490,7 @@ body {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: rgba($color: #000000, $alpha: 0.6);
+        background-color: rgba($color: #000000, $alpha: 0.4);
     }
 
     &__video {
@@ -500,17 +500,6 @@ body {
         min-height: 100%;
         overflow: hidden;
         z-index: -1;
-        
-        
-        // &--mobile {
-        //     display: block;
-        //     width: 100%;
-        //     z-index: -1;
-        // }
-
-        // &--desktop {
-        //     display: none;
-        // }
     }
 
     &__icon {
@@ -601,22 +590,11 @@ body {
 
 @media(min-width: 1200px) {
     .header {
-        background-image: none;
+        background-image: url('../img/header-desktop.jpg');
 
         &__video {
             display: block;
             position: absolute;
-    
-            // &--mobile {
-            //     display: none;
-            // }
-    
-            // &--desktop {
-            //     top: -20%;
-            //     min-width: 100%;
-            //     min-height: 100%;
-            //     display: block;
-            // }
         }
 
         &__icon {
